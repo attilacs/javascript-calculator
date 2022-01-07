@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/javascript-calculator/static/js/main.2598ed53.js",
+    "static/js/787.34493040.chunk.js": "/javascript-calculator/static/js/787.34493040.chunk.js",
+    "index.html": "/javascript-calculator/index.html",
+    "main.2598ed53.js.map": "/javascript-calculator/static/js/main.2598ed53.js.map",
+    "787.34493040.chunk.js.map": "/javascript-calculator/static/js/787.34493040.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.2598ed53.js"
+  ]
+}
