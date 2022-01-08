@@ -21,6 +21,8 @@ export const isLengthExceeded = (value: string) => {
   return value.length >= maxInputLength;
 };
 
+export const removeTrailingZeros = (value: string) => parseFloat(value) + "";
+
 export const isNumber = (value: string) => "0" <= value && value <= "9";
 export const isOperator = (value: string) => /[x/+-]/.test(value);
 export const getFirstChar = (value: string) => value.slice(0, 1);
