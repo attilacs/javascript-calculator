@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CalculatorContainerStyled from "../styles/CalculatorContainerStyled";
 import Display from "./Display";
+import Formula from "./Formula";
 import Numpad from "./Numpad";
 
 const CalculatorContainer = () => {
@@ -9,6 +10,7 @@ const CalculatorContainer = () => {
 
   return (
     <CalculatorContainerStyled>
+      <Formula formula={formula} />
       <Display value={displayedValue} />
       <Numpad />
     </CalculatorContainerStyled>
