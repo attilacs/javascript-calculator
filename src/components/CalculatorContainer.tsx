@@ -8,11 +8,14 @@ const CalculatorContainer = () => {
   const [displayedValue, setDisplayedValue] = useState("0");
   const [formula, setFormula] = useState("");
 
+  const handleInput = (value: string) => {
+  };
+
   return (
     <CalculatorContainerStyled>
       <Formula formula={formula} />
       <Display value={displayedValue} />
-      <Numpad />
+      <Numpad handleInput={handleInput} />
     </CalculatorContainerStyled>
   );
 };
