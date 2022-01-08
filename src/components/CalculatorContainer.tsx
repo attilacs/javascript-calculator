@@ -9,7 +9,8 @@ import {
   getLastChar,
   isLengthExceeded,
   isNumber,
-  isOperator
+  isOperator,
+  removeTrailingZeros
 } from "./service";
 
 const CalculatorContainer = () => {
@@ -76,6 +77,35 @@ const CalculatorContainer = () => {
     setDisplayedValue(displayedValue + value);
   };
 
+  const handleOperator = (value: string) => {
+    if (isEvaluated) {
+      setFormula(displayedValue);
+      setDisplayedValue(value);
+      setIsEvaluated(false);
+      return;
+    }
+    const prevValue = getLastChar(displayedValue);
+    if (prevValue === ".") {
+      const sliced = displayedValue.slice(0, displayedValue.length - 1);
+      setFormula(formula + sliced);
+      setDisplayedValue(value);
+      return;
+    }
+    if (isOperator(prevValue)) {
+      if (displayedValue.length === 1) {
+        if (value === "-") {
+          setDisplayedValue(displayedValue + value);
+        } else {
+          setDisplayedValue(value);
+        }
+      }
+    }
+    if (isNumber(prevValue)) {
+      setFormula(formula + removeTrailingZeros(displayedValue));
+      setDisplayedValue(value);
+    }
+  };
+
   const handleInput = (value: string) => {
     if (value === "AC") {
       initCalculator();
@@ -85,6 +115,9 @@ const CalculatorContainer = () => {
     }
     if (value === ".") {
       handleDecimal(value);
+    }
+    if (isOperator(value)) {
+      handleOperator(value);
     }
   };
 
