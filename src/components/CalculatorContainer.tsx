@@ -50,12 +50,41 @@ const CalculatorContainer = () => {
     setDisplayedValue(displayedValue + value);
   };
 
+  const handleDecimal = (value: string) => {
+    if (isLengthExceeded(displayedValue)) {
+      return;
+    }
+    if (displayedValue.includes(".")) {
+      return;
+    }
+    if (isEvaluated) {
+      initCalculator();
+      setIsEvaluated(false);
+    }
+    const prevValue = getLastChar(displayedValue);
+    if (isOperator(prevValue)) {
+      if (displayedValue.length === 2) {
+        const first = getFirstChar(displayedValue);
+        setFormula(formula + first);
+        setDisplayedValue("-0" + value);
+        return;
+      }
+      setFormula(formula + displayedValue);
+      setDisplayedValue("0" + value);
+      return;
+    }
+    setDisplayedValue(displayedValue + value);
+  };
+
   const handleInput = (value: string) => {
     if (value === "AC") {
       initCalculator();
     }
     if (isNumber(value)) {
       handleNumberInput(value);
+    }
+    if (value === ".") {
+      handleDecimal(value);
     }
   };
 
