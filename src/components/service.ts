@@ -12,6 +12,15 @@ export const clearCalculator = (
   formulaSetter("");
 };
 
+export const isLengthExceeded = (value: string) => {
+  let maxInputLength = 20;
+  const first = getFirstChar(value);
+  if (first === "-") {
+    maxInputLength++;
+  }
+  return value.length >= maxInputLength;
+};
+
 export const isNumber = (value: string) => "0" <= value && value <= "9";
 export const isOperator = (value: string) => /[x/+-]/.test(value);
 export const getFirstChar = (value: string) => value.slice(0, 1);
