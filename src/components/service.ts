@@ -22,6 +22,8 @@ export const isLengthExceeded = (value: string) => {
 };
 
 export const removeTrailingZeros = (value: string) => parseFloat(value) + "";
+export const replaceMultiplyChar = (value: string) =>
+  value.replaceAll("x", "*");
 
 export const isNumber = (value: string) => "0" <= value && value <= "9";
 export const isOperator = (value: string) => /[x/+-]/.test(value);
