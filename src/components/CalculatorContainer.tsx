@@ -8,6 +8,7 @@ import { clearCalculator } from "./service";
 const CalculatorContainer = () => {
   const [displayedValue, setDisplayedValue] = useState("0");
   const [formula, setFormula] = useState("");
+  const [isEvaluated, setIsEvaluated] = useState(true);
 
   const handleInput = (value: string) => {
     if (value === "AC") {
