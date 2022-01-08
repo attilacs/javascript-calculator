@@ -16,7 +16,7 @@ const CalculatorContainer = () => {
 
   const handleInput = (value: string) => {
     if (value === "AC") {
-      clearCalculator(setDisplayedValue, setFormula);
+      initCalculator();
     }
   };
 
