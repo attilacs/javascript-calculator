@@ -12,7 +12,7 @@ const buttons = [
   { label: "9", id: "nine" },
   { label: "+", id: "add" },
   { label: "-", id: "subtract" },
-  { label: "*", id: "multiply" },
+  { label: "x", id: "multiply" },
   { label: "/", id: "divide" },
   { label: ".", id: "decimal" },
   { label: "AC", id: "clear" }
