@@ -11,3 +11,5 @@ export const clearCalculator = (
   displaySetter("0");
   formulaSetter("");
 };
+
+export const isNumber = (value: string) => "0" <= value && value <= "9";
