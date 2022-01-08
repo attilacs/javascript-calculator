@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 const DisplayStyled = styled.div`
-  overflow-x: scroll;
+  display: flex;
+  justify-content: flex-end;
 `;
 
 export default DisplayStyled;
