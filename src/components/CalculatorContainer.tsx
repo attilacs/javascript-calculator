@@ -5,6 +5,7 @@ import Numpad from "./Numpad";
 
 const CalculatorContainer = () => {
   const [displayedValue, setDisplayedValue] = useState("0");
+  const [formula, setFormula] = useState("");
 
   return (
     <CalculatorContainerStyled>
