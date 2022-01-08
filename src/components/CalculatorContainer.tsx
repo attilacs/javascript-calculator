@@ -10,6 +10,10 @@ const CalculatorContainer = () => {
   const [formula, setFormula] = useState("");
   const [isEvaluated, setIsEvaluated] = useState(true);
 
+  const initCalculator = () => {
+    clearCalculator(setDisplayedValue, setFormula);
+  };
+
   const handleInput = (value: string) => {
     if (value === "AC") {
       clearCalculator(setDisplayedValue, setFormula);
