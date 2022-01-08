@@ -13,3 +13,4 @@ export const clearCalculator = (
 };
 
 export const isNumber = (value: string) => "0" <= value && value <= "9";
+export const isOperator = (value: string) => /[x/+-]/.test(value);
