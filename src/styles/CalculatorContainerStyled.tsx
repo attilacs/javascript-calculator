@@ -5,7 +5,7 @@ const CalculatorContainerStyled = styled.div`
   border-radius: 2px;
   display: flex;
   flex-direction: column;
-  width: 152px;
+  width: 315px;
 `;
 
 export default CalculatorContainerStyled;
