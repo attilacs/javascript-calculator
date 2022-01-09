@@ -4,7 +4,7 @@ interface FormulaProps {
   formula: string;
 }
 
-const charLimit = 18;
+const charLimit = 23;
 
 const getFormulaSubstring = (formula: string, charLimit: number) => {
   const size = formula.length;
