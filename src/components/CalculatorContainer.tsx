@@ -1,3 +1,4 @@
+import { evaluate } from "mathjs";
 import { useState } from "react";
 import CalculatorContainerStyled from "../styles/CalculatorContainerStyled";
 import Display from "./Display";
@@ -10,7 +11,10 @@ import {
   isLengthExceeded,
   isNumber,
   isOperator,
-  removeTrailingZeros
+  limitDisplayedLength,
+  removeTrailingZeros,
+  replaceMultiplyChar,
+  roundNumber
 } from "./service";
 
 const CalculatorContainer = () => {
@@ -106,6 +110,27 @@ const CalculatorContainer = () => {
     }
   };
 
+  const handleEvaluate = (value: string) => {
+    if (isEvaluated) {
+      return;
+    }
+    const prevValue = getLastChar(displayedValue);
+    if (isOperator(prevValue)) {
+      const evaluated = evaluate(replaceMultiplyChar(formula));
+      setDisplayedValue(evaluated);
+      setIsEvaluated(true);
+      return;
+    }
+    const toFormula = formula + removeTrailingZeros(displayedValue);
+    setFormula(toFormula);
+    const toEvaluate = replaceMultiplyChar(toFormula);
+    let evaluated = evaluate(toEvaluate);
+    evaluated = roundNumber(evaluated);
+    evaluated = limitDisplayedLength(evaluated);
+    setDisplayedValue(evaluated);
+    setIsEvaluated(true);
+  };
+
   const handleInput = (value: string) => {
     if (value === "AC") {
       initCalculator();
@@ -118,6 +143,9 @@ const CalculatorContainer = () => {
     }
     if (isOperator(value)) {
       handleOperator(value);
+    }
+    if (value === "=") {
+      handleEvaluate(value);
     }
   };
 
