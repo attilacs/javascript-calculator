@@ -23,6 +23,16 @@ export const isLengthExceeded = (value: string) => {
   return value.length >= maxLength;
 };
 
+export const limitDisplayedLength = (value: number) => {
+  const valueStr = value + "";
+  let maxLength = maxInputLength;
+  const first = getFirstChar(valueStr);
+  if (first === "-") {
+    maxLength++;
+  }
+  return valueStr.slice(0, maxLength);
+};
+
 export const removeTrailingZeros = (value: string) => parseFloat(value) + "";
 export const replaceMultiplyChar = (value: string) =>
   value.replaceAll("x", "*");
