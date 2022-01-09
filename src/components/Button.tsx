@@ -4,15 +4,25 @@ interface ButtonProps {
   label: string;
   id: string;
   handleInput: Function;
+  color?: string;
 }
 
-const Button = ({ label, id, handleInput }: ButtonProps) => {
+const Button = ({
+  label,
+  id,
+  handleInput,
+  color = "slategray"
+}: ButtonProps) => {
   const onInput = () => {
     handleInput(label);
   };
 
   return (
-    <ButtonStyled id={id} theme={{ area: id }} onClick={onInput}>
+    <ButtonStyled
+      id={id}
+      theme={{ area: id, color: color }}
+      onClick={onInput}
+    >
       {label}
     </ButtonStyled>
   );

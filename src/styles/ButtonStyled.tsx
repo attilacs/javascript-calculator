@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const ButtonStyled = styled.div`
   align-items: center;
-  background-color: gray;
+  background-color: ${(props) => props.theme.color};
   border-radius: 2px;
   color: white;
   cursor: pointer;

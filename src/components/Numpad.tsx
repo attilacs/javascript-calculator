@@ -15,6 +15,7 @@ const Numpad = ({ handleInput }: NumpadProps) => {
           id={button.id}
           label={button.label}
           handleInput={handleInput}
+          color={button.color}
         />
       ))}
     </NumpadStyled>

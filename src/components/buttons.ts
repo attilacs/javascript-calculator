@@ -1,5 +1,5 @@
 const buttons = [
-  { label: "=", id: "equals" },
+  { label: "=", id: "equals", color: "green" },
   { label: "0", id: "zero" },
   { label: "1", id: "one" },
   { label: "2", id: "two" },
@@ -10,12 +10,12 @@ const buttons = [
   { label: "7", id: "seven" },
   { label: "8", id: "eight" },
   { label: "9", id: "nine" },
-  { label: "+", id: "add" },
-  { label: "-", id: "subtract" },
-  { label: "x", id: "multiply" },
-  { label: "/", id: "divide" },
+  { label: "+", id: "add", color: "gray" },
+  { label: "-", id: "subtract", color: "gray" },
+  { label: "x", id: "multiply", color: "gray" },
+  { label: "/", id: "divide", color: "gray" },
   { label: ".", id: "decimal" },
-  { label: "AC", id: "clear" }
+  { label: "AC", id: "clear", color: "red" }
 ];
 
 export default buttons;
