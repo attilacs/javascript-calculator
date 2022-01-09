@@ -1,4 +1,4 @@
-const maxInputLength = 20;
+const maxInputLength = 13;
 
 export const roundNumber = (n: number) => {
   const decimalPlaces = 10;
