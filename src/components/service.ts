@@ -1,3 +1,5 @@
+const maxInputLength = 20;
+
 export const roundNumber = (n: number) => {
   const decimalPlaces = 10;
   const multiplier = Math.pow(10, decimalPlaces);
@@ -13,12 +15,12 @@ export const clearCalculator = (
 };
 
 export const isLengthExceeded = (value: string) => {
-  let maxInputLength = 20;
+  let maxLength = maxInputLength;
   const first = getFirstChar(value);
   if (first === "-") {
-    maxInputLength++;
+    maxLength++;
   }
-  return value.length >= maxInputLength;
+  return value.length >= maxLength;
 };
 
 export const removeTrailingZeros = (value: string) => parseFloat(value) + "";
