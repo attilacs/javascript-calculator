@@ -102,6 +102,8 @@ const CalculatorContainer = () => {
         } else {
           setDisplayedValue(value);
         }
+      } else if (value !== "-") {
+        setDisplayedValue(value);
       }
     }
     if (isNumber(prevValue)) {
