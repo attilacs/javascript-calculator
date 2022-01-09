@@ -6,6 +6,7 @@ const CalculatorContainerStyled = styled.div`
   display: flex;
   flex-direction: column;
   width: 315px;
+  padding: 5px;
 `;
 
 export default CalculatorContainerStyled;
