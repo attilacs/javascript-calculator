@@ -11,8 +11,8 @@ const ButtonStyled = styled.div`
   font-size: 20px;
   grid-area: ${(props) => props.theme.area};
   justify-content: center;
-  min-width: 25px;
-  padding: 5px;
+  min-width: 35px;
+  padding: 20px;
 `;
 
 export default ButtonStyled;
