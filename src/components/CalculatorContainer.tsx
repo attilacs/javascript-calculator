@@ -117,7 +117,7 @@ const CalculatorContainer = () => {
     const prevValue = getLastChar(displayedValue);
     if (isOperator(prevValue)) {
       const evaluated = evaluate(replaceMultiplyChar(formula));
-      setDisplayedValue(evaluated);
+      setDisplayedValue(evaluated + "");
       setIsEvaluated(true);
       return;
     }
@@ -127,7 +127,7 @@ const CalculatorContainer = () => {
     let evaluated = evaluate(toEvaluate);
     evaluated = roundNumber(evaluated);
     evaluated = limitDisplayedLength(evaluated);
-    setDisplayedValue(evaluated);
+    setDisplayedValue(evaluated + "");
     setIsEvaluated(true);
   };
 
